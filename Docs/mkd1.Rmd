@@ -1,0 +1,53 @@
+---
+title: "meu markdown"
+author: "claudio"
+date: "18/07/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## meu primeiro markdown
+
+Esse é o primeiro arquivo rmd que me propus a realizar.
+Acredito que, apesar das dificuldades que encontrei, possa sair algo de útil.
+
+
+```{r,data ("anscombe") }
+
+summary(anscombe)
+
+data("anscombe")
+```
+
+## Algumas observações
+
+## realizando medias
+apply(anscombe[,1:4], 2, mean)
+
+## calculando a covariancia
+apply(anscombe, 2, var)
+
+## calculando os coeficientes de regressão
+m1 <- lm(anscombe$y1 ~ anscombe$x1)
+m2 <- lm(anscombe$y2 ~ anscombe$x2)
+m3 <- lm(anscombe$y3 ~ anscombe$x3)
+m4 <- lm(anscombe$y4 ~ anscombe$x4)
+m1<-lm(y1~x1, data=anscombe)
+
+mlist <- list(m1, m2, m3, m4)
+mlist[[1]]
+summary(mlist[[1]])
+
+##output formato 01
+lapply(mlist, coef)
+
+##output formato 02
+coef(mlist[[1]]
+
+## OBRIGADO!
+
+```
+
